@@ -1,29 +1,48 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="sandbox" :dark="dark">
+    <v-navigation-drawer
+      v-model="primaryDrawer.model"
+      :permanent="primaryDrawer.type === 'permanent'"
+      :temporary="primaryDrawer.type === 'temporary'"
+      :clipped="primaryDrawer.clipped"
+      :floating="primaryDrawer.floating"
+      :mini-variant="primaryDrawer.mini"
+      absolute
+      overflow
+      app
+    ></v-navigation-drawer>
+    <v-toolbar :clipped-left="primaryDrawer.clipped" app absolute>
+      <v-toolbar-side-icon
+        v-if="primaryDrawer.type !== 'permanent'"
+        @click.stop="primaryDrawer.model = !primaryDrawer.model"
+      ></v-toolbar-side-icon>
+      <v-toolbar-title>Gearbase</v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <v-container fluid>
+        <router-view />
+      </v-container>
+    </v-content>
+    <app-footer></app-footer>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+  import AppFooter from '@/components/AppFooter'
+  export default {
+    components: {
+      AppFooter
+    },
+    data: () => ({
+      dark: true,
+      drawers: ['Default (no property)', 'Permanent', 'Temporary'],
+      primaryDrawer: {
+        model: null,
+        type: 'default (no property)',
+        clipped: true,
+        floating: false,
+        mini: false
+      },
+    })
   }
-}
-</style>
+</script>
