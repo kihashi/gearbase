@@ -10,7 +10,7 @@
       absolute
       overflow
       app
-    ></v-navigation-drawer>
+    ><navigation></navigation></v-navigation-drawer>
     <v-toolbar :clipped-left="primaryDrawer.clipped" app absolute>
       <v-toolbar-side-icon
         v-if="primaryDrawer.type !== 'permanent'"
@@ -29,9 +29,11 @@
 
 <script>
   import AppFooter from '@/components/AppFooter'
+  import Navigation from '@/components/Navigation'
   export default {
     components: {
-      AppFooter
+      AppFooter,
+      Navigation
     },
     data: () => ({
       dark: true,
