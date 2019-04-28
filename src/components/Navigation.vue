@@ -28,6 +28,7 @@
             <v-list-tile-title>My Gear Lists</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-spacer></v-spacer>
         <v-list-tile @click="">
           <v-list-tile-action>
             <v-icon>settings</v-icon>

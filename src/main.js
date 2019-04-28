@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import '@mdi/font/css/materialdesignicons.css'
+import './firebaseConfig'
 
 Vue.config.productionTip = false
 
