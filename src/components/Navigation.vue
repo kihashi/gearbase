@@ -4,7 +4,7 @@
 <template>
 
     <v-list dense>
-        <v-list-tile @click="">
+        <v-list-tile to="/public">
           <v-list-tile-action>
             <v-icon>mdi-earth</v-icon>
           </v-list-tile-action>
@@ -12,7 +12,7 @@
             <v-list-tile-title>Public Lists</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile to="/closet">
           <v-list-tile-action>
             <v-icon>mdi-door</v-icon>
           </v-list-tile-action>
@@ -20,7 +20,7 @@
             <v-list-tile-title>Gear Closet</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile to="/lists">
           <v-list-tile-action>
             <v-icon>mdi-format-list-bulleted</v-icon>
           </v-list-tile-action>

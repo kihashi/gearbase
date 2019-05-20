@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Login from './views/Login.vue'
-import Signup from './views/Signup.vue'
+import GearCloset from '@/views/GearCloset'
+import UserLists from '@/views/UserLists'
+import PublicLists from '@/views/PublicLists'
+import List from '@/views/List'
 
 Vue.use(Router)
 
@@ -14,16 +16,25 @@ export default new Router({
       component: Home
     },
     {
-      path: '/signup',
-      name: 'Signup',
-      component: Signup
+      path: '/closet',
+      name: 'Gear Closet',
+      component: GearCloset
     },
     {
-      path: '/login',
-      name: 'Login',
-      component: Login
+      path: '/lists',
+      name: 'User Lists',
+      component: UserLists
+    },
+    {
+      path: '/public',
+      name: 'Public Lists',
+      component: PublicLists
+    },
+    {
+      path: '/lists/:id',
+      name: 'List',
+      component: List
     }
-    // {
     //   path: '/about',
     //   name: 'about',
     //   // route level code-splitting
