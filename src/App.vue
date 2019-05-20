@@ -23,7 +23,7 @@
       <UserMenu></UserMenu>
     </v-toolbar>
     <v-content transition="slide-x-transition">
-      <v-container fluid>
+      <v-container grid-list-md fluid>
         <router-view />
       </v-container>
     </v-content>
